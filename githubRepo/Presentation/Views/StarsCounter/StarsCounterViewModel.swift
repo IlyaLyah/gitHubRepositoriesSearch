@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+public protocol StarsCounterViewModel {
+    var count: Int { get }
+}
+
+public struct StarsCounterViewModelImpl: StarsCounterViewModel {
+    public let count: Int
+    
+    public init(count: Int) {
+        self.count = count
+    }
+}

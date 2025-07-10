@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		B137EDB52E01A10F00B8267A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B137ED512E00B6BA00B8267A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B137ED582E00B6BA00B8267A;
+			remoteInfo = githubRepo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B137ED592E00B6BA00B8267A /* githubRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B137EDB12E01A10F00B8267A /* githubRepoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = githubRepoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -29,10 +40,22 @@
 			path = githubRepo;
 			sourceTree = "<group>";
 		};
+		B137EDB22E01A10F00B8267A /* githubRepoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = githubRepoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B137ED562E00B6BA00B8267A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B137EDAE2E01A10F00B8267A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				B137ED5B2E00B6BA00B8267A /* githubRepo */,
+				B137EDB22E01A10F00B8267A /* githubRepoTests */,
 				B137ED5A2E00B6BA00B8267A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				B137ED592E00B6BA00B8267A /* githubRepo.app */,
+				B137EDB12E01A10F00B8267A /* githubRepoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +108,29 @@
 			productReference = B137ED592E00B6BA00B8267A /* githubRepo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B137EDB02E01A10F00B8267A /* githubRepoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B137EDB72E01A10F00B8267A /* Build configuration list for PBXNativeTarget "githubRepoTests" */;
+			buildPhases = (
+				B137EDAD2E01A10F00B8267A /* Sources */,
+				B137EDAE2E01A10F00B8267A /* Frameworks */,
+				B137EDAF2E01A10F00B8267A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B137EDB62E01A10F00B8267A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B137EDB22E01A10F00B8267A /* githubRepoTests */,
+			);
+			name = githubRepoTests;
+			packageProductDependencies = (
+			);
+			productName = githubRepoTests;
+			productReference = B137EDB12E01A10F00B8267A /* githubRepoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -95,6 +143,10 @@
 				TargetAttributes = {
 					B137ED582E00B6BA00B8267A = {
 						CreatedOnToolsVersion = 16.2;
+					};
+					B137EDB02E01A10F00B8267A = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B137ED582E00B6BA00B8267A;
 					};
 				};
 			};
@@ -113,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				B137ED582E00B6BA00B8267A /* githubRepo */,
+				B137EDB02E01A10F00B8267A /* githubRepoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B137ED572E00B6BA00B8267A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B137EDAF2E01A10F00B8267A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -135,7 +195,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B137EDAD2E01A10F00B8267A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B137EDB62E01A10F00B8267A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B137ED582E00B6BA00B8267A /* githubRepo */;
+			targetProxy = B137EDB52E01A10F00B8267A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B137ED6D2E00B6BC00B8267A /* Debug */ = {
@@ -149,9 +224,8 @@
 				INFOPLIST_FILE = githubRepo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -176,9 +250,8 @@
 				INFOPLIST_FILE = githubRepo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +384,40 @@
 			};
 			name = Release;
 		};
+		B137EDB82E01A10F00B8267A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kotitiki.githubRepoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/githubRepo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/githubRepo";
+			};
+			name = Debug;
+		};
+		B137EDB92E01A10F00B8267A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.kotitiki.githubRepoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/githubRepo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/githubRepo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -328,6 +435,15 @@
 			buildConfigurations = (
 				B137ED6D2E00B6BC00B8267A /* Debug */,
 				B137ED6E2E00B6BC00B8267A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B137EDB72E01A10F00B8267A /* Build configuration list for PBXNativeTarget "githubRepoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B137EDB82E01A10F00B8267A /* Debug */,
+				B137EDB92E01A10F00B8267A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

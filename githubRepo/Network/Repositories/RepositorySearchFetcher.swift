@@ -7,10 +7,6 @@
 
 import Foundation
 
-public enum RepositorySearchError: Error {
-    case searchError(Error?)
-}
-
 public struct RepositorySearchResponse: Decodable {
     public let items: [Repository]
 }
@@ -21,14 +17,27 @@ public protocol RepositorySearchFetcher {
 
 public struct RepositorySearchFetcherImpl: RepositorySearchFetcher {
     public func fetchRepositories(query: String, page: Int?, completion: @escaping (Result<[Repository], RepositorySearchError>) -> Void) {
-        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(query)&page=\(page ?? 0)") else {
-            completion(.failure(.searchError(nil)))
+        guard !query.isEmpty else {
+            completion(.success([]))
+            return
+        }
+        
+        var urlComponents = URLComponents(string: "https://api.github.com/search/repositories")
+
+        urlComponents?.queryItems = [
+            URLQueryItem(name: "q", value: query),
+            URLQueryItem(name: "page", value: String(page ?? 0))
+        ]
+        
+        guard let url = urlComponents?.url else {
+            completion(.failure(.badURL))
             return
         }
         
         let urlSessionConfig: URLSessionConfiguration = .default
         let session = URLSession(configuration: urlSessionConfig)
         let decoder = JSONDecoder()
+
         session.dataTask(with: URLRequest(url: url)) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 422 {
                 completion(.success([]))
@@ -36,14 +45,14 @@ public struct RepositorySearchFetcherImpl: RepositorySearchFetcher {
             }
             
             guard let data else {
-                completion(.failure(.searchError(nil)))
+                completion(.failure(.responseError(nil)))
                 return
             }
             
             if let result = try? decoder.decode(RepositorySearchResponse.self, from: data) {
                 completion(.success(result.items))
             } else {
-                completion(.failure(.searchError(error)))
+                completion(.failure(.responseError(error)))
             }
         }.resume()
     }
